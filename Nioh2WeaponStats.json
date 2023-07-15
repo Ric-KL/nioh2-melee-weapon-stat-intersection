@@ -1,0 +1,14 @@
+{
+    "Sword":[" Heart" , " Strength" , " Skill"],
+    "Odachi":[" Strength" , " Stamina" , " Heart"],
+    "Dual Swords":[" Skill" , " Heart" , " Strength"],
+    "Spear":[" Constitution" , " Strength" , " Skill"],
+    "Splitstaff":[" Magic" , " Courage" , " Strength"],
+    "Switchglaive":[" Magic" , " Constitution" , " Skill"],
+    "Axe":[" Stamina" , " Courage" , " Strength"],
+    "Hammer":[" Stamina" , " Courage" , " Constitution"],
+    "Hatchets":[" Skill" , " Courage" , " Magic"],
+    "Kusarigama":[" Dexterity" , " Skill" , " Strength"],
+    "Fists":[" Strength" , " Heart" , " Dexterity"],
+    "Tonfa":[" Courage" , " Constitution" , " Dexterity"]
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Stats: Nioh 2</title>
+    <!--Bootstrap CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous" defer></script>
+    <!--Custom Files-->
+    <link rel="stylesheet" href="StatPlannerStyle.css">
+    <link rel="icon" type="image/x-icon" href="IMG DATA/Nioh2Favicon.png">
+</head>
+<body class="vh-100 p-2">
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <!--Checklist section-->
+            <div class="col-4 me-2 h-100">
+                <div class="row h-100">
+                    <div class="col-12 banner-image-container h-25">
+                        <img src="IMG DATA/Banner.png" class="banner-image" height="100%" width="100%">
+                    </div>
+                    <div class="col-12 rounded-5 h-75">
+                        <div class="row h-75 p-2 d-flex justify-content-around align-items-start g-0 " id="checkbox-container">
+                            <!--Template Blocks, remove later-->
+<!--                             <div class="col-5 mb-4 entry-container" id="Sword"><input type="checkbox" class="entry-button">Sword</div>
+                            <div class="col-5 mb-4 entry-container"></div>
+                            <div class="col-5 mb-4 entry-container"></div>
+                            <div class="col-5 mb-4 entry-container"></div>
+                            <div class="col-5 mb-4 entry-container"></div>
+                            <div class="col-5 mb-4 entry-container"></div>
+                            <div class="col-5 mb-4 entry-container"></div>
+                            <div class="col-5 mb-4 entry-container"></div>
+                            <div class="col-5 mb-4 entry-container"></div>
+                            <div class="col-5 mb-4 entry-container"></div>
+                            <div class="col-5 mb-4 entry-container"></div>
+                            <div class="col-5 mb-4 entry-container"></div>
+                            <div class="col-5 mb-4 entry-container"></div>
+                            <div class="col-5 mb-4 entry-container"></div>
+                            <div class="col-5 mb-4 entry-container"></div>
+                            <div class="col-5 mb-4 entry-container"></div> -->
+                        </div>
+                        <div class="row h-25 p-4">
+                            <button id="checkStats"> COMPARE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Output Section-->
+            <div class="col h-100 d-none" id="outputsContainer"> <!--Composite Output, starts at d-none and has that property removed on first successful run-->
+                <div class="row h-100">
+                    <div class="col-12 mb-2 p-4">
+                        <div class="container-fluid h-100 outputs">
+                            <div class="row h-100 p-2">
+                                <div class="col-6 border-right bottom-border h-25 d-flex justify-content-center align-items-center big-text">
+                                    Matching Stats
+                                </div>
+                                <div class="col-6 bottom-border h-25 d-flex justify-content-center align-items-center big-text">
+                                    Remaining Stats
+                                </div>
+                                <div class="col-6 border-right h-75 d-flex justify-content-center align-items-center medium-text" id="intersectionOutput"> <!--Output target for JS-->
+                                    Results intersection
+                                </div>
+                                <div class="col-6 h-75 d-flex justify-content-center align-items-center medium-text" id="differenceOutput"> <!--Output target for JS-->
+                                    Results symmetrical difference
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col me-1 p-4">
+                        <div class="container-fluid h-100 outputs">
+                            <div class="row h-100 p-2">
+                                <div class="col-12 h-25 bottom-border d-flex justify-content-center align-items-center medium-text" id="entry1Name"> <!--Read target for JS-->
+                                    Name 1
+                                </div>
+                                <div class="col-12 h-75 d-flex justify-content-center align-items-center medium-text" id="entry1Data"> <!--Read target for JS-->
+                                    Stats 1
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col ms-1 p-4">
+                        <div class="container-fluid h-100 outputs"> <!--Selection 2, starts at d-none-->
+                            <div class="row h-100 p-2">
+                                <div class="col-12 h-25 bottom-border d-flex justify-content-center align-items-center medium-text" id="entry2Name"> <!--Read target for JS-->
+                                    Name 2
+                                </div>
+                                <div class="col-12 h-75 d-flex justify-content-center align-items-center medium-text" id="entry2Data"> <!--Read target for JS-->
+                                    Stats 2
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="commonalityChecker.js"></script>
+</body>
+</html>

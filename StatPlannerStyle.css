@@ -1,0 +1,85 @@
+/*Testing CSS*/
+
+.bounds {
+    border: solid red 2px;
+}
+
+/*Style CSS*/
+body {
+    background-image: linear-gradient(to right, #141e30, #243b55); /*source : https://www.makeuseof.com/css-background-gradients/*/
+}
+
+/*Structural CSS*/
+
+.banner-image-container {
+    object-fit: scale-down;
+}
+
+#checkbox-container {
+    overflow-y: scroll;
+    /*background-image: linear-gradient(to right, #141e30, #243b55); /*source : https://www.makeuseof.com/css-background-gradients/*/
+    border-top: solid black 2px;
+    border-bottom: solid black 2px;
+}
+
+    #checkbox-container::-webkit-scrollbar{
+        display: none;
+    }
+
+.entry-container {
+    height: 10%;
+    display: flex;
+    justify-content: start;
+    padding-left: 15px;
+    padding-right: 5px;
+    align-items: center;
+    font-size: x-large;
+    background-image: linear-gradient(to right, #fffbd5, #b10124); /*source : https://www.makeuseof.com/css-background-gradients/*/
+    box-shadow: 0px 5px 10px black;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transform: skew(5deg);
+    border-radius: 5px;
+}
+
+input.entry-button {
+    margin-right: 15px;
+    transform: scale(2);
+}
+
+#checkStats {
+    font-size: 3em;
+    border-radius: 5px;
+    background-color: #fffbd5;
+}
+    #checkStats:active {
+        background-color: #b20a2c;
+        box-shadow: inset 0px 0px 60px #fffbd5;
+    }
+
+.composite-output {
+    transform: skew(5deg);
+}
+
+.outputs {
+    transform: skew(5deg);
+    background-image: linear-gradient(to right, #fffbd5, #b10124); /*source : https://www.makeuseof.com/css-background-gradients/*/
+    box-shadow: 0px 5px 10px black;
+}
+
+.big-text {
+    font-size: 3em;
+}
+
+.medium-text {
+    font-size: 2em;
+}
+
+.bottom-border {
+    border-bottom: solid black;
+}
+
+.border-right {
+    border-right: solid black;
+}
