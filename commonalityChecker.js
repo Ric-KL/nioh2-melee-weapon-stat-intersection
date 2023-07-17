@@ -16,12 +16,12 @@ function writeEntry(entryName, insertTarget) { //fires on page load via initiali
     newEntryDiv.classList.add("col-5");
     newEntryDiv.classList.add("mb-4");
     newEntryDiv.classList.add("entry-container");
-    
+
     let newEntryCheck = document.createElement("input")
-    newEntryCheck.setAttribute("type","checkbox");
+    newEntryCheck.setAttribute("type", "checkbox");
     newEntryCheck.classList.add("entry-button");
-    newEntryCheck.setAttribute("id",entryName)
-    
+    newEntryCheck.setAttribute("id", entryName)
+
     newEntryDiv.appendChild(newEntryCheck);
     insertTarget.appendChild(newEntryDiv);
     newEntryDiv.appendChild(document.createTextNode(entryName))
@@ -30,7 +30,7 @@ function writeEntry(entryName, insertTarget) { //fires on page load via initiali
 function fetchSelection() { //fires on button press, grabs any checkboxes that are clicked and adds their id to the array
     let selectionsArray = [];
     let scanList = document.querySelectorAll(".entry-button");
-    for (let i = 0 ; i < scanList.length ; i++) {
+    for (let i = 0; i < scanList.length; i++) {
         if (scanList[i].checked) {
             selectionsArray.push(scanList[i].id);
         }
@@ -45,12 +45,12 @@ function CheckSelectionNumber(numLimit, array) { //helper function for run progr
 function intersectionCheck(keyArray) { //takes an array of keys and find the intersection and symmetrical difference of all entries
     let intersectionSet = new Set();
     let differenceSet = new Set();
-    for (let i = 0 ; i < keyArray.length-1 ; i++){ //iterates the main array whose values are used for indexOf
+    for (let i = 0; i < keyArray.length - 1; i++) { //iterates the main array whose values are used for indexOf
         let currentArray = data[keyArray[i]];
-        for (let k = i+1 ; k < keyArray.length ; k++) {//iterates ahead of the main array for the target of indexOf
+        for (let k = i + 1; k < keyArray.length; k++) {//iterates ahead of the main array for the target of indexOf
             let searchArray = data[keyArray[k]];
-                for (let m = 0 ; m < currentArray.length ; m++) {//iterates through the main array values to be used as references for indexOf
-                 if (searchArray.indexOf(currentArray[m]) == -1 && intersectionSet.has(currentArray[m])) { //moves item from intersection to difference if found that it was not in all arrays
+            for (let m = 0; m < currentArray.length; m++) {//iterates through the main array values to be used as references for indexOf
+                if (searchArray.indexOf(currentArray[m]) == -1 && intersectionSet.has(currentArray[m])) { //moves item from intersection to difference if found that it was not in all arrays
                     intersectionSet.delete(currentArray[m]);
                     differenceSet.add(currentArray[m]);
                 }
@@ -59,13 +59,13 @@ function intersectionCheck(keyArray) { //takes an array of keys and find the int
                 }
                 else { //adds to difference set if no other conditions apply
                     differenceSet.add(currentArray[m]);
-                } 
-            } 
+                }
+            }
         }
     }
-    let finalkey = keyArray.length-1;
-    data[keyArray[finalkey]].forEach(x => {if(!intersectionSet.has(x)){differenceSet.add(x)}});
-    return [intersectionSet,differenceSet];
+    let finalkey = keyArray.length - 1;
+    data[keyArray[finalkey]].forEach(x => { if (!intersectionSet.has(x)) { differenceSet.add(x) } });
+    return [intersectionSet, differenceSet];
 }
 
 function writeOutput() { //writes the results to the specified html ids
@@ -73,7 +73,7 @@ function writeOutput() { //writes the results to the specified html ids
 
 function runProgram() {
     let selectionArr = fetchSelection();
-    if(!CheckSelectionNumber(2,selectionArr)) {
+    if (!CheckSelectionNumber(2, selectionArr)) {
         alert("Incorrect number of entries selected. Please select 2 options.")
         return
     }
@@ -90,11 +90,35 @@ function runProgram() {
     }
 }
 
+function selectionHalt() {
+    let limit = 2;
+    console.log("selectionHalt Runs")
+    let currentSelected = 0;
+    let scanList = document.querySelectorAll(".entry-button");
+    scanList.forEach(x => x.classList.remove("no-click"));
+    scanList.forEach(x => x.parentElement.classList.remove("greyout"));
+    for (let i = 0; i < scanList.length; i++) {
+        if (scanList[i].checked) {
+            currentSelected++;
+            console.log(currentSelected);
+        }
+    }
+    if (currentSelected >= limit) {
+        for (let k = 0; k < scanList.length; k++) {
+            if (!scanList[k].checked) {
+                scanList[k].classList.add("no-click");
+                scanList[k].parentElement.classList.add("greyout");
+            }
+        }
+    }
+}
+
 //Running Code
 
-function initialize () {
-    keyNames.forEach(x => writeEntry(x,selectionContainer))
-    compareButton.addEventListener("click",runProgram)
+function initialize() {
+    keyNames.forEach(x => writeEntry(x, selectionContainer));
+    compareButton.addEventListener("click", runProgram);
+    selectionContainer.addEventListener("click", selectionHalt);
 }
 
 initialize()

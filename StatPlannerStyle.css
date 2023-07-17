@@ -83,3 +83,12 @@ input.entry-button {
 .border-right {
     border-right: solid black;
 }
+
+.no-click {
+    user-select: none;
+    pointer-events: none;
+}
+
+.greyout{
+    background-image: linear-gradient(to right, #7e7d7b, #3a3435); /*source : https://www.makeuseof.com/css-background-gradients/*/
+}
