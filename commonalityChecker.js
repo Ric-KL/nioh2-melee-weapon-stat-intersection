@@ -68,9 +68,6 @@ function intersectionCheck(keyArray) { //takes an array of keys and find the int
     return [intersectionSet, differenceSet];
 }
 
-function writeOutput() { //writes the results to the specified html ids
-}
-
 function runProgram() {
     let selectionArr = fetchSelection();
     if (!CheckSelectionNumber(2, selectionArr)) {
