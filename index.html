@@ -25,13 +25,14 @@
                         </div>
                         <div class="row h-25 p-4">
                             <button id="checkStats"> COMPARE</button>
+                            <button id="reverseToggle">REVERSE</button>
                         </div>
                     </div>
                 </div>
             </div>
             <!--Output Section-->
-            <div class="col h-100 d-none" id="outputsContainer"> <!--Composite Output, starts at d-none and has that property removed on first successful run-->
-                <div class="row h-100">
+            <div class="col h-100">
+                <div class="row h-100 d-none" id="outputsContainer">
                     <div class="col-12 mb-2 p-4">
                         <div class="container-fluid h-100 outputs">
                             <div class="row h-100 p-2">
@@ -50,7 +51,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col me-1 p-4">
+                    <div class="col me-1 p-4 d-none" id="choices1Container">
                         <div class="container-fluid h-100 outputs">
                             <div class="row h-100 p-2">
                                 <div class="col-12 h-25 bottom-border d-flex justify-content-center align-items-center medium-text" id="entry1Name"> <!--Read target for JS-->
@@ -62,7 +63,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col ms-1 p-4">
+                    <div class="col ms-1 p-4 d-none" id="choices2Container">
                         <div class="container-fluid h-100 outputs"> <!--Selection 2, starts at d-none-->
                             <div class="row h-100 p-2">
                                 <div class="col-12 h-25 bottom-border d-flex justify-content-center align-items-center medium-text" id="entry2Name"> <!--Read target for JS-->

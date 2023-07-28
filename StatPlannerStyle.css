@@ -7,6 +7,7 @@
 /*Style CSS*/
 body {
     background-image: linear-gradient(to right, #141e30, #243b55); /*source : https://www.makeuseof.com/css-background-gradients/*/
+    overflow: hidden;
 }
 
 /*Structural CSS*/
@@ -58,6 +59,15 @@ input.entry-button {
         box-shadow: inset 0px 0px 60px #fffbd5;
     }
 
+#reverseToggle {
+    border-radius: 5px;
+    background-color: #fffbd5;
+}
+    #reverseToggle:active {
+        background-color: #b20a2c;
+        box-shadow: inset 0px 0px 20px #fffbd5;
+    }
+
 .composite-output {
     transform: skew(5deg);
 }
@@ -66,6 +76,7 @@ input.entry-button {
     transform: skew(5deg);
     background-image: linear-gradient(to right, #fffbd5, #b10124); /*source : https://www.makeuseof.com/css-background-gradients/*/
     box-shadow: 0px 5px 10px black;
+    overflow-wrap: break-word;
 }
 
 .big-text {
